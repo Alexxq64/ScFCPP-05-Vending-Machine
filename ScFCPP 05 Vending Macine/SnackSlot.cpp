@@ -38,6 +38,10 @@ bool SnackSlot::giveOutSnack() {
 	return true;
 }
 
+int SnackSlot::getCurrentQtty() const{
+	return _currentQtty;
+}
+
 //Not used. I do not know if I must write these methods
 // 
 
@@ -51,10 +55,6 @@ bool SnackSlot::giveOutSnack() {
 //
 //void SnackSlot::setCurrentQtty(int qtty){
 //	_currentQtty = qtty;
-//}
-//
-//int SnackSlot::getCurrentQtty() const{
-//	return _currentQtty;
 //}
 //
 //void SnackSlot::setIsEmpty(bool empty){

@@ -20,6 +20,7 @@ public:
 	int getNumberVM() const;
 	SnackSlot* getSlot(int n) const;
 	int getEmptySlotsCount() const;
+	int getLeftQtty();
 
 	//Not used. I do not know if I must write these methods
 	// 

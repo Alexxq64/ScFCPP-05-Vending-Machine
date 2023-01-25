@@ -57,6 +57,10 @@ int main() {
 	cout << "VM" << machine->getNumberVM() << "  Empty slots: " << machine->getEmptySlotsCount() << endl; // Должно выводить количество пустых слотов для снеков
 	cout << "VM" << machine1->getNumberVM() << "  Empty slots: " << machine1->getEmptySlotsCount() << endl; // Должно выводить количество пустых слотов для снеков
 
+
+	cout << "VM" << machine->getNumberVM() << "  Left snacks: " << machine->getLeftQtty() << endl; // Должно выводить количество пустых слотов для снек
+	cout << "VM" << machine1->getNumberVM() << "  Left snacks: " << machine1->getLeftQtty() << endl; // Должно выводить количество пустых слотов для снек
+
 	delete machine;
 	delete machine1;
 	delete slot;

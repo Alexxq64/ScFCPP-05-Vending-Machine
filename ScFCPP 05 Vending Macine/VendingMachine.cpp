@@ -37,9 +37,19 @@ int VendingMachine::getEmptySlotsCount() const{
 	return _emptySlotsCount;
 }
 
+int VendingMachine::getLeftQtty(){
+	int rest = 0;
+	for (int i = 0; i < _slotQtty - _emptySlotsCount; i++) {
+		rest += _slots[i]->getCurrentQtty();
+	}
+	return rest;
+}
+
 int VendingMachine::getNumberVM() const {
 	return _numberVM;
 }
+
+
 
 //Not used. I do not know if I must write these methods
 // 
