@@ -24,6 +24,7 @@
     <ProjectGuid>{2193d2d9-322f-4d5f-b024-f92f4b758c1d}</ProjectGuid>
     <RootNamespace>ScFCPP05VendingMacine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ScFCPP 05 Vending Machine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

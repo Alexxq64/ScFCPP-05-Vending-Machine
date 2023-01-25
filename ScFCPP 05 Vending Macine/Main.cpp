@@ -13,13 +13,28 @@ int main() {
 	SnackSlot* slot = new SnackSlot(10/*количество батончиков, которые помещаются в слот*/);
 	slot->addSnack(bounty); //Добавляем батончик в слот
 	slot->addSnack(snickers);
-	int slotCount = 1;
+
+	// For example slotCount  = 10
+	int slotCount = 10;
 	VendingMachine* machine = new VendingMachine(slotCount /*Количество слотов для снеков*/);
 	machine->addSlot(slot); // Помещаем слот обратно в аппарат
-	machine->addSlot(slot); // Помещаем слот обратно в аппарат
 
-	cout << machine->getEmptySlotsCount(); // Должно выводить количество пустых слотов для снеков
+	// !!!!!!!Here it is possible to put the same slot into the vending machine many times. There should be check for this case!!!!!!!!!	
+
+	slot->addSnack(bounty); //Добавляем батончик в слот
+
+	VendingMachine* machine1 = new VendingMachine();
+	machine1->addSlot(slot); // Помещаем слот обратно в аппарат
+	machine1->addSlot(slot); // Помещаем слот обратно в аппарат
+    slot->giveOutSnack();
+	slot->giveOutSnack();
+	slot->giveOutSnack();
+
+
+	cout << "Empty slots: " << machine->getEmptySlotsCount(); // Должно выводить количество пустых слотов для снеков
+	cout << "Empty slots: " << machine1->getEmptySlotsCount(); // Должно выводить количество пустых слотов для снеков
 	delete machine;
+	delete machine1;
 	delete slot;
 	delete snickers;
 	delete bounty;

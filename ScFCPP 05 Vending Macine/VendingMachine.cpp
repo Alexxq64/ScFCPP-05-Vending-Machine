@@ -5,23 +5,36 @@ using namespace std;
 VendingMachine::VendingMachine(int slotQtty){
 	_slots = new SnackSlot*[slotQtty];
 	_slotQtty = slotQtty;
-	_emptySlots = slotQtty;
-
+	_emptySlotsCount = slotQtty;
 }
 
-int VendingMachine::getEmptySlotsCount() const{
-	return _emptySlots;
-}
+VendingMachine::VendingMachine() : VendingMachine::VendingMachine(10) {}
 
 VendingMachine::~VendingMachine(){
 	delete[] _slots;
 }
 
+void VendingMachine::setEmptySlotsCount(int qtty){
+	_emptySlotsCount = qtty;
+}
+
+int VendingMachine::getEmptySlotsCount() const{
+	return _emptySlotsCount;
+}
+
+void VendingMachine::setSlotQtty(int qtty){
+	_slotQtty = qtty;
+}
+
+int VendingMachine::getSlotQtty() const{
+	return _slotQtty;
+}
+
 bool VendingMachine::addSlot(SnackSlot* slot)
 {
-	if (_emptySlots) {
-		_slots[_slotQtty - _emptySlots] = slot;
-		_emptySlots--;
+	if (_emptySlotsCount) {
+		_slots[_slotQtty - _emptySlotsCount] = slot;
+		_emptySlotsCount--;
 		return true;
 	}
 	cout << "Все слоты установлены. Нет места для слотов. " << endl;

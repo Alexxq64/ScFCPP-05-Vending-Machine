@@ -3,15 +3,18 @@
 class VendingMachine
 {
 	int _slotQtty;
-	int _emptySlots;
+	int _emptySlotsCount;
 	SnackSlot** _slots;
 
 public:
-	VendingMachine() = default;
+	VendingMachine();
 	VendingMachine(int slotQtty);
 	~VendingMachine();
 
 	bool addSlot(SnackSlot* snack);
+	void setEmptySlotsCount(int qtty);
 	int getEmptySlotsCount() const;
+	void setSlotQtty(int qtty);
+	int getSlotQtty() const;
 };
 

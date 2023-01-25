@@ -14,8 +14,10 @@ public:
 	Snack(const std::string name, double price, int nutritionalValue);
 	~Snack() = default;
 
-	std::string getName() {
-		return _name;
-	}
-
+	void setName(const std::string name);
+	std::string getName() const;
+	void setPrice(double price);
+	double getPrice() const;
+	void setEnergy(int nutritionalValue);
+	int getNutritionalValue() const;
 };

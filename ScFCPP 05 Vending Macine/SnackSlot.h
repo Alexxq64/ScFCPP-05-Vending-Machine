@@ -14,6 +14,12 @@ public:
 	~SnackSlot();
 
 	bool addSnack(Snack* snack);
-	//Snack* giveOutSnack();
+	bool giveOutSnack();
+	void setCapacity(int qtty);
+	int getCapacity() const;
+	void setCurrentQtty(int qtty);
+	int getCurrentQtty() const;
+	void setIsEmpty(bool empty);
+	bool getIsEmpty() const;
 };
 
