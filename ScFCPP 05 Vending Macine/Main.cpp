@@ -11,7 +11,7 @@ int main() {
 	Snack* bounty = new Snack("Bounty");
 	Snack* snickers = new Snack("Snickers");
 	SnackSlot* slot = new SnackSlot(10/*количество батончиков, которые помещаютс€ в слот*/);
-	// For example 10 slots in a VM
+	// For example 8 slots in a VM
 	int slotCount = 8;
 	VendingMachine* machine = new VendingMachine(slotCount /* оличество слотов дл€ снеков*/);
 	cout << "VM" << machine->getNumberVM() << endl;
@@ -20,10 +20,10 @@ int main() {
 
 	machine->addSlot(slot); // ѕомещаем слот обратно в аппарат
 
-	// Here it is possible to put the same slot into the vending machine many times. There should be check for this case.	
+	// Here it is possible to put the same slot into the vending machines many times. There should be check for this case.	
 	// You can not use the same pointer in different slots of one VM or some VMs. Unique pointer is needed for each slot.
 	// Otherwise any changing of one slot will react to other slots with the same pointer.
-	// I mean you could repeat string 20 and it would be an error in the logic of the program
+	// I mean you could repeat string 21 and it would be an error in the logic of the program
 
 	SnackSlot* slot1 = new SnackSlot(10);
 	// this constructor creates a VM by default with 10 slots
