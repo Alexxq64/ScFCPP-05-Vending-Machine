@@ -10,14 +10,17 @@ class Snack
 public:
 	Snack() = default;
 	Snack(const std::string name);
-	Snack(const std::string name, double price);
-	Snack(const std::string name, double price, int nutritionalValue);
+	//Snack(const std::string name, double price);
+	//Snack(const std::string name, double price, int nutritionalValue);
 	~Snack() = default;
 
-	void setName(const std::string name);
 	std::string getName() const;
-	void setPrice(double price);
-	double getPrice() const;
-	void setEnergy(int nutritionalValue);
-	int getNutritionalValue() const;
+
+	//Not used. I do not know if I must write these methods
+	// 
+	//void setName(const std::string name);
+	//void setPrice(double price);
+	//double getPrice() const;
+	//void setEnergy(int nutritionalValue);
+	//int getNutritionalValue() const;
 };

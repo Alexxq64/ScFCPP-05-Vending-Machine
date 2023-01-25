@@ -13,6 +13,7 @@ SnackSlot::~SnackSlot(){
 	delete[] _snacks;
 }
 
+// bool is not used. This method is declared in such way just in case
 bool SnackSlot::addSnack(Snack* snack){
 	if (_currentQtty == _capacity) {
 		cout << "Слот заполнен. В наличии " << _capacity << " шт." << endl;
@@ -24,6 +25,7 @@ bool SnackSlot::addSnack(Snack* snack){
 	return true;
 }
 
+// bool is not used. This method is declared in such way just in case
 bool SnackSlot::giveOutSnack() {
 	if (_isEmpty) {
 		cout << "Слот пустой." << endl;
@@ -36,26 +38,29 @@ bool SnackSlot::giveOutSnack() {
 	return true;
 }
 
-void SnackSlot::setCapacity(int qtty){
-	_capacity = qtty;
-}
+//Not used. I do not know if I must write these methods
+// 
 
-int SnackSlot::getCapacity() const{
-	return _capacity;
-}
-
-void SnackSlot::setCurrentQtty(int qtty){
-	_currentQtty = qtty;
-}
-
-int SnackSlot::getCurrentQtty() const{
-	return _currentQtty;
-}
-
-void SnackSlot::setIsEmpty(bool empty){
-	_isEmpty = empty;
-}
-
-bool SnackSlot::getIsEmpty() const{
-	return _isEmpty;
-}
+//void SnackSlot::setCapacity(int qtty){
+//	_capacity = qtty;
+//}
+//
+//int SnackSlot::getCapacity() const{
+//	return _capacity;
+//}
+//
+//void SnackSlot::setCurrentQtty(int qtty){
+//	_currentQtty = qtty;
+//}
+//
+//int SnackSlot::getCurrentQtty() const{
+//	return _currentQtty;
+//}
+//
+//void SnackSlot::setIsEmpty(bool empty){
+//	_isEmpty = empty;
+//}
+//
+//bool SnackSlot::getIsEmpty() const{
+//	return _isEmpty;
+//}

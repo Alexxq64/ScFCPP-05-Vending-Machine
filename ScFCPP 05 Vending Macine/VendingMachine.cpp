@@ -1,35 +1,27 @@
 #include "VendingMachine.h"
 #include <iostream>
+
 using namespace std;
 
 VendingMachine::VendingMachine(int slotQtty){
 	_slots = new SnackSlot*[slotQtty];
 	_slotQtty = slotQtty;
 	_emptySlotsCount = slotQtty;
+	_numberVM = ++counterVM;
 }
 
+// I wanted to try nested constructors
 VendingMachine::VendingMachine() : VendingMachine::VendingMachine(10) {}
 
 VendingMachine::~VendingMachine(){
 	delete[] _slots;
 }
-
-void VendingMachine::setEmptySlotsCount(int qtty){
-	_emptySlotsCount = qtty;
+SnackSlot* VendingMachine::getSlot(int n) const
+{
+	return _slots[n];
 }
 
-int VendingMachine::getEmptySlotsCount() const{
-	return _emptySlotsCount;
-}
-
-void VendingMachine::setSlotQtty(int qtty){
-	_slotQtty = qtty;
-}
-
-int VendingMachine::getSlotQtty() const{
-	return _slotQtty;
-}
-
+// bool is not used. This method is declared in such way just in case
 bool VendingMachine::addSlot(SnackSlot* slot)
 {
 	if (_emptySlotsCount) {
@@ -40,3 +32,26 @@ bool VendingMachine::addSlot(SnackSlot* slot)
 	cout << "Все слоты установлены. Нет места для слотов. " << endl;
 	return false;
 }
+
+int VendingMachine::getEmptySlotsCount() const{
+	return _emptySlotsCount;
+}
+
+int VendingMachine::getNumberVM() const {
+	return _numberVM;
+}
+
+//Not used. I do not know if I must write these methods
+// 
+
+//void VendingMachine::setEmptySlotsCount(int qtty){
+//	_emptySlotsCount = qtty;
+//}
+//
+//void VendingMachine::setSlotQtty(int qtty){
+//	_slotQtty = qtty;
+//}
+//
+//int VendingMachine::getSlotQtty() const{
+//	return _slotQtty;
+//}
