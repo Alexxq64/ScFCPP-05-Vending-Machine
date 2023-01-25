@@ -3,9 +3,9 @@
 
 class Snack
 {
-	std::string name;
-	double price;
-	int nutritionalValue;
+	std::string _name;
+	double _price;
+	int _nutritionalValue;
 
 public:
 	Snack() = default;
@@ -15,7 +15,7 @@ public:
 	~Snack() = default;
 
 	std::string getName() {
-		return name;
+		return _name;
 	}
 
 };

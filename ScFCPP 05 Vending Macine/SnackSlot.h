@@ -3,14 +3,15 @@
 
 class SnackSlot
 {
-	int maxCapacity;
-	int firstEmptyCell;
-	Snack** snacks;
+	int _capacity;
+	int _currentQtty;
+	bool _isEmpty;
+	Snack** _snacks;
 
 public:
 	SnackSlot() = default;
-	SnackSlot(int maxCapacity);
-	~SnackSlot() = default;
+	SnackSlot(int capacity);
+	~SnackSlot();
 
 	bool addSnack(Snack* snack);
 	//Snack* giveOutSnack();

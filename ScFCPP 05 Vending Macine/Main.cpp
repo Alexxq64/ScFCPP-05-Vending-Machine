@@ -1,7 +1,8 @@
 #include <iostream>
-#include <locale>
+#include <locale.h>
 #include "Snack.h"
 #include "SnackSlot.h"
+#include "VendingMachine.h"
 
 using namespace std;
 
@@ -9,13 +10,15 @@ int main() {
 	setlocale(LC_ALL, "Russian");
 	Snack* bounty = new Snack("Bounty");
 	Snack* snickers = new Snack("Snickers");
-	SnackSlot* slot = new SnackSlot(10/*Є®«ЁзҐбвў® Ў в®­зЁЄ®ў, Є®в®алҐ Ї®¬Ґй овбп ў б«®в*/);
-	slot->addSnack(bounty); //„®Ў ў«пҐ¬ Ў в®­зЁЄ ў б«®в
+	SnackSlot* slot = new SnackSlot(10/*количество батончиков, которые помещаются в слот*/);
+	slot->addSnack(bounty); //Добавляем батончик в слот
 	slot->addSnack(snickers);
-	VendingMachine* machine = new VendingMachine(slotCount /*Љ®«ЁзҐбвў® б«®в®ў ¤«п б­ҐЄ®ў*/);
-	machine->addSlot(slot); // Џ®¬Ґй Ґ¬ б«®в ®Ўа в­® ў  ЇЇ а в
+	int slotCount = 1;
+	VendingMachine* machine = new VendingMachine(slotCount /*Количество слотов для снеков*/);
+	machine->addSlot(slot); // Помещаем слот обратно в аппарат
+	machine->addSlot(slot); // Помещаем слот обратно в аппарат
 
-	cout << machine->getEmptySlotsCount(); // „®«¦­® ўлў®¤Ёвм Є®«ЁзҐбвў® Їгбвле б«®в®ў ¤«п б­ҐЄ®ў
+	cout << machine->getEmptySlotsCount(); // Должно выводить количество пустых слотов для снеков
 	delete machine;
 	delete slot;
 	delete snickers;

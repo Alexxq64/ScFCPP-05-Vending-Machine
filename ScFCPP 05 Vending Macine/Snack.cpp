@@ -1,16 +1,16 @@
 #include "Snack.h"
 
 Snack::Snack(const std::string name){
-	this->name = name;
+	_name = name;
 }
 
 Snack::Snack(const std::string name, double price){
-	this->name = name;
-	this->price = price;
+	_name = name;
+	_price = price;
 }
 
 Snack::Snack(const std::string name, double price, int nutritionalValue){
-	this->name = name;
-	this->price = price;
-	this->nutritionalValue = nutritionalValue;
+	_name = name;
+	_price = price;
+	_nutritionalValue = nutritionalValue;
 }
